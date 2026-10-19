@@ -1,4 +1,4 @@
-# ClaudeWings
+# <img src="media/icon.png" alt="" width="32" height="32" align="absmiddle"> ClaudeWings
 
 Switch Claude Code between your Claude accounts in one click, without logging in again. When one account runs out of usage, swap to another and keep working. Works in **VS Code** and **Cursor**.
 
