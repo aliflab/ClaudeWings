@@ -72,3 +72,16 @@ npm run package   # produces dist/claudewings-0.1.2.vsix
 ```
 
 Press F5 in VS Code to run the extension in a development window.
+
+## Releasing
+
+1. Bump `version` in `package.json`.
+2. Add a `## X.Y.Z` entry to `CHANGELOG.md`.
+3. Commit and push.
+4. Tag and push the tag:
+
+   ```sh
+   git tag vX.Y.Z && git push origin vX.Y.Z
+   ```
+
+The release workflow then builds the extension and publishes a GitHub Release with the `.vsix` attached and the changelog entry as its notes.
