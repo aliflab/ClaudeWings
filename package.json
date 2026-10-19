@@ -1,0 +1,108 @@
+{
+  "name": "claudewings",
+  "displayName": "ClaudeWings",
+  "description": "Switch Claude Code between your Claude accounts in one click, and see each account's usage in the status bar.",
+  "version": "0.1.0",
+  "publisher": "claudewings",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliflab/ClaudeWings.git"
+  },
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "claude code",
+    "account",
+    "switcher",
+    "usage",
+    "cursor"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeWings.menu",
+        "title": "Menu",
+        "category": "ClaudeWings"
+      },
+      {
+        "command": "claudeWings.switchBest",
+        "title": "Switch to best account",
+        "category": "ClaudeWings"
+      },
+      {
+        "command": "claudeWings.switchAccount",
+        "title": "Claude accounts",
+        "category": "ClaudeWings"
+      },
+      {
+        "command": "claudeWings.saveCurrent",
+        "title": "Save current login",
+        "category": "ClaudeWings"
+      },
+      {
+        "command": "claudeWings.removeAccount",
+        "title": "Remove saved account",
+        "category": "ClaudeWings"
+      },
+      {
+        "command": "claudeWings.refreshUsage",
+        "title": "Refresh usage",
+        "category": "ClaudeWings"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "claudeWings.menu",
+        "key": "ctrl+alt+f",
+        "mac": "ctrl+alt+f"
+      },
+      {
+        "command": "claudeWings.switchBest",
+        "key": "ctrl+alt+a",
+        "mac": "ctrl+alt+a"
+      }
+    ],
+    "configuration": {
+      "title": "ClaudeWings",
+      "properties": {
+        "claudeWings.refreshIntervalMinutes": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "description": "How often to check each saved account's usage, in minutes."
+        },
+        "claudeWings.warningThreshold": {
+          "type": "number",
+          "default": 90,
+          "minimum": 1,
+          "maximum": 100,
+          "description": "Session usage percentage at which the status bar item turns to a warning colour."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node --test \"out/test/*.test.js\"",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/vscode": "~1.85.0",
+    "@vscode/vsce": "^3.2.0",
+    "typescript": "^5.4.0"
+  }
+}
