@@ -10,16 +10,16 @@ export interface AccountRow {
 }
 
 export class StatusBar implements vscode.Disposable {
-  private readonly star: vscode.StatusBarItem;
+  private readonly wings:vscode.StatusBarItem;
   private readonly account: vscode.StatusBarItem;
 
   constructor() {
-    this.star = vscode.window.createStatusBarItem('claudeWings.menu', vscode.StatusBarAlignment.Left, 100);
-    this.star.name = 'ClaudeWings Menu';
-    this.star.text = '★';
-    this.star.tooltip = 'ClaudeWings (Ctrl+Alt+F)';
-    this.star.command = 'claudeWings.menu';
-    this.star.show();
+    this.wings = vscode.window.createStatusBarItem('claudeWings.menu', vscode.StatusBarAlignment.Left, 100);
+    this.wings.name = 'ClaudeWings Menu';
+    this.wings.text = '$(claudewings-wings)';
+    this.wings.tooltip = 'ClaudeWings (Ctrl+Alt+F)';
+    this.wings.command = 'claudeWings.menu';
+    this.wings.show();
 
     this.account = vscode.window.createStatusBarItem('claudeWings.account', vscode.StatusBarAlignment.Left, 99);
     this.account.name = 'ClaudeWings Account';
@@ -77,7 +77,7 @@ export class StatusBar implements vscode.Disposable {
   }
 
   dispose(): void {
-    this.star.dispose();
+    this.wings.dispose();
     this.account.dispose();
   }
 }

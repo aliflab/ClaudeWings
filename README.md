@@ -4,7 +4,7 @@ Switch Claude Code between your Claude accounts in one click, without logging in
 
 It adds two things to the status bar (bottom left):
 
-- **★**: a menu (Ctrl+Alt+F) with "Switch to best account", "Claude accounts", "Save current login", "Remove saved account" and "Refresh usage".
+- **The wings icon**: a menu (Ctrl+Alt+F) with "Switch to best account", "Claude accounts", "Save current login", "Remove saved account" and "Refresh usage".
 - **Your account and usage**, for example `jane 42%` (session usage). Hover over it to see every saved account's session and weekly usage and when each resets. Click it to switch.
 
 **Ctrl+Alt+A** switches straight to the account with the most usage left.
@@ -16,17 +16,17 @@ It adds two things to the status bar (bottom left):
 
 ## Install
 
-1. Get `claudewings-0.1.0.vsix` (or build it, see below).
+1. Get `claudewings-0.1.2.vsix` (or build it, see below).
 2. Open the Extensions view (Ctrl+Shift+X, or Cmd+Shift+X on Mac).
 3. Click the **…** menu at the top of the Extensions view and choose **Install from VSIX…**
-4. Pick `claudewings-0.1.0.vsix`.
+4. Pick `claudewings-0.1.2.vsix`.
 5. Reload: press Ctrl+Shift+P (Cmd+Shift+P on Mac), type **Reload Window** and press Enter.
 
 Or from a terminal:
 
 ```sh
-code --install-extension claudewings-0.1.0.vsix     # VS Code
-cursor --install-extension claudewings-0.1.0.vsix   # Cursor
+code --install-extension dist/claudewings-0.1.2.vsix     # VS Code
+cursor --install-extension dist/claudewings-0.1.2.vsix   # Cursor
 ```
 
 ## Save your accounts (once per account)
@@ -34,9 +34,9 @@ cursor --install-extension claudewings-0.1.0.vsix   # Cursor
 The switcher can only swap between logins you've saved.
 
 1. Log in to Claude Code with your first account as usual.
-2. Click **★**, then **Save current login**.
+2. Click the **wings icon**, then **Save current login**.
 3. In the Claude Code chat, type `/login` and log in with your next account.
-4. Click **★**, then **Save current login** again.
+4. Click the **wings icon**, then **Save current login** again.
 5. Repeat steps 3 and 4 for any other accounts.
 
 The account and usage now show in the status bar.
@@ -68,7 +68,7 @@ After switching, click **New Conversation** in the message that pops up. Convers
 ```sh
 npm install
 npm test          # compile + unit tests
-npm run package   # produces claudewings-0.1.0.vsix
+npm run package   # produces dist/claudewings-0.1.2.vsix
 ```
 
 Press F5 in VS Code to run the extension in a development window.

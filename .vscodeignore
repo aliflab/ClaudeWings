@@ -6,4 +6,5 @@ out/test/**
 **/*.ts
 tsconfig.json
 node_modules/**
+dist/**
 .gitignore

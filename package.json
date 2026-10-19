@@ -2,7 +2,7 @@
   "name": "claudewings",
   "displayName": "ClaudeWings",
   "description": "Switch Claude Code between your Claude accounts in one click, and see each account's usage in the status bar.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "publisher": "claudewings",
   "license": "MIT",
   "repository": {
@@ -73,6 +73,15 @@
         "mac": "ctrl+alt+a"
       }
     ],
+    "icons": {
+      "claudewings-wings": {
+        "description": "ClaudeWings wings",
+        "default": {
+          "fontPath": "media/claudewings.woff",
+          "fontCharacter": "\\E000"
+        }
+      }
+    },
     "configuration": {
       "title": "ClaudeWings",
       "properties": {
@@ -97,7 +106,7 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "test": "npm run compile && node --test \"out/test/*.test.js\"",
-    "package": "vsce package"
+    "package": "vsce package --out dist/"
   },
   "devDependencies": {
     "@types/node": "^18.19.0",
